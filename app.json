@@ -1,0 +1,8 @@
+{
+  "name": "Wordpress for Heroku",
+  "description": "Deploy your WP on Heroku.",
+  "repository": "https://github.com/tineo/wordpress",
+  "logo": "https://s.w.org/about/images/wordpress-logo-notext-bg.png",
+  "keywords": ["wordpress", "heroku", "php", "mysql", "apache", "apache2"],
+  "addons": ["cleardb:ignite","newrelic:wayne","sendgrid:starter"]
+}

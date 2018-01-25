@@ -15,17 +15,25 @@
  */
 
 // ** Ajustes de MySQL. Solicita estos datos a tu proveedor de alojamiento web. ** //
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
 /** El nombre de tu base de datos de WordPress */
-define('DB_NAME', 'nombredetubasededatos');
+define('DB_NAME', $db);
 
 /** Tu nombre de usuario de MySQL */
-define('DB_USER', 'nombredeusuario');
+define('DB_USER', $username);
 
 /** Tu contraseña de MySQL */
-define('DB_PASSWORD', 'contraseña');
+define('DB_PASSWORD', $password);
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo) */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $server);
 
 /** Codificación de caracteres para la base de datos. */
 define('DB_CHARSET', 'utf8');
